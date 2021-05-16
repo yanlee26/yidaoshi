@@ -1,0 +1,12 @@
+/public
+/src/api
+/src/**/*.d.ts
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+*.min.js
+/dist/**/*.css
+
+# webpack 相关
+/config/**
+/scripts/**
