@@ -8,7 +8,7 @@ const PartThree: FC<IPartThree> = (props) => {
     const [money, setMoney] = useState('')
     const [yearPercent, setYearPercent] = useState('')
     const [year, setYear] = useState('')
-    const [result, setResult] = useState('')
+    const [result, setResult] = useState<any>('')
 
     return (
         <div className="partOne">
