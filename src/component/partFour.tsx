@@ -71,7 +71,6 @@ const PartFour: FC<IPartFour> = (props) => {
                 </Button>
                 <Button
                     theme="danger"
-                    size="sm"
                     onClick={() => {
                         setResult('')
                         setMoney('')

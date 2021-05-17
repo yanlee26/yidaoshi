@@ -62,7 +62,6 @@ const PartOne: FC<IPartOne> = (props) => {
             <div className="button" style={{ marginBottom: '20px' }}>
                 <Button
                     theme="primary"
-                    size="sm"
                     style={{ marginRight: '20px' }}
                     onClick={() => {
                         const t = 1 + Number(yearPercent) / 1200
@@ -75,7 +74,6 @@ const PartOne: FC<IPartOne> = (props) => {
                 </Button>
                 <Button
                     theme="danger"
-                    size="sm"
                     onClick={() => {
                         setResult('')
                         setMonthMoney('')

@@ -62,7 +62,6 @@ const PartThree: FC<IPartThree> = (props) => {
             <div className="button" style={{ marginBottom: '20px' }}>
                 <Button
                     theme="primary"
-                    size="sm"
                     style={{ marginRight: '20px' }}
                     onClick={() => {
                         const result =
@@ -73,7 +72,6 @@ const PartThree: FC<IPartThree> = (props) => {
                 </Button>
                 <Button
                     theme="danger"
-                    size="sm"
                     onClick={() => {
                         setResult('')
                         setMoney('')
