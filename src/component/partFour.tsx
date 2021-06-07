@@ -43,9 +43,9 @@ const PartFour: FC<IPartFour> = (props) => {
                     }}
                     onBlur={(value) => console.log(`onBlur: ${value}`)}
                 />
-              <span>年</span>
+                <span>年</span>
             </Cell>
-            <Cell title="年化收益率 %">
+            <Cell title="年化收益率">
                 <Input
                     clearable
                     type="text"
