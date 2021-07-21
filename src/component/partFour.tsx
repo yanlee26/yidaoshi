@@ -83,7 +83,11 @@ const PartFour: FC<IPartFour> = (props) => {
             </div>
 
             <Cell title="初始投入金额">
-                <Input readOnly type="text" value={result} />
+                <Input
+                    readOnly
+                    type="text"
+                    value={Math.round(Number(result) * 10000) / 10000 + ''}
+                />
                 <span>万元</span>
             </Cell>
             <Cell />

@@ -85,7 +85,11 @@ const PartOne: FC<IPartOne> = (props) => {
             </div>
 
             <Cell title="到期收益金额">
-                <Input readOnly type="text" value={result} />
+                <Input
+                    readOnly
+                    type="text"
+                    value={Math.round(Number(result) * 10000) / 10000 + ''}
+                />
                 <span>万元</span>
             </Cell>
             <Cell />
