@@ -66,7 +66,7 @@ const PartFour: FC<IPartFour> = (props) => {
                     onClick={() => {
                         const result =
                             Number(money) / Math.pow(1 + Number(yearPercent) / 100, Number(year))
-                        setResult(result + '')
+                        setResult(Math.round(Number(result) * 10000) / 10000 + '')
                     }}>
                     计算
                 </Button>
@@ -83,11 +83,7 @@ const PartFour: FC<IPartFour> = (props) => {
             </div>
 
             <Cell title="初始投入金额">
-                <Input
-                    readOnly
-                    type="text"
-                    value={Math.round(Number(result) * 10000) / 10000 + ''}
-                />
+                <Input readOnly type="text" value={result} />
                 <span>万元</span>
             </Cell>
             <Cell />

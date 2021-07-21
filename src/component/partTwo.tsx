@@ -68,7 +68,7 @@ const PartTwo: FC<IPartTwo> = (props) => {
                         const n = Number(year) * 12
                         const P = Number(money)
                         const A = (P * (1 - t)) / (t - Math.pow(t, n + 1))
-                        setResult(A)
+                        setResult(Math.round(Number(A) * 10000) / 10000 + '')
                     }}>
                     计算
                 </Button>
@@ -85,11 +85,7 @@ const PartTwo: FC<IPartTwo> = (props) => {
             </div>
 
             <Cell title="每月需投金额">
-                <Input
-                    readOnly
-                    type="text"
-                    value={Math.round(Number(result) * 10000) / 10000 + ''}
-                />
+                <Input readOnly type="text" value={result} />
                 <span>万元</span>
             </Cell>
             <Cell />
