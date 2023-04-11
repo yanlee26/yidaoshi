@@ -91,11 +91,11 @@ const PartOne: FC<IPartOne> = (props) => {
 
             <Cell title="定投1年以下卖出价">
                 <Input readOnly type="text" value={lowYear} />
-                <span>万元</span>
+                <span>元</span>
             </Cell>
             <Cell title="定投1年以上卖出价">
                 <Input readOnly type="text" value={upYear} />
-                <span>万元</span>
+                <span>元</span>
             </Cell>
             <Cell />
         </div>
