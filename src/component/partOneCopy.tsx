@@ -68,11 +68,16 @@ const PartOne: FC<IPartOne> = (props) => {
                         const t = Number(yearPercent) * 0.01
                         const n = Number(month)
                         const A = Number(ETFMoney)
-
                         const lowYearValue = A * (1 + t)
-                        setLowYear(lowYearValue.toFixed(2))
                         const upYearValue = A * (1 + (t * n) / 12)
-                        setUpYear(upYearValue.toFixed(2))
+
+                        if (n < 12) {
+                            setLowYear(lowYearValue.toFixed(2))
+                            setUpYear('')
+                        } else {
+                            setUpYear(upYearValue.toFixed(2))
+                            setLowYear('')
+                        }
                     }}>
                     计算
                 </Button>
