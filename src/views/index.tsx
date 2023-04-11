@@ -18,7 +18,7 @@ const Index: FC<IIndex> = (props) => {
             <img src={logo} alt="" className="logo" />
 
             <Tabs value={value} onChange={setValue} swipeable>
-                <Panel title="定投收益">
+                <Panel title="定投卖出价">
                     <PartOneCopy />
                 </Panel>
                 <Panel title="定投倒推">
