@@ -8,6 +8,7 @@ import PartTwo from '@/component/partTwo'
 import PartThree from '@/component/partThree'
 import PartFour from '@/component/partFour'
 import './index.less'
+import PartFive from '@/component/partFive'
 interface IIndex {}
 
 const Index: FC<IIndex> = (props) => {
@@ -28,6 +29,9 @@ const Index: FC<IIndex> = (props) => {
                 </Panel>
                 <Panel title="初始投入">
                     <PartFour />
+                </Panel>
+                <Panel title="新标签页">
+                    <PartFive />
                 </Panel>
             </Tabs>
 
