@@ -1,51 +1,52 @@
 import React, { FC, useState } from 'react'
-import { Button, Cell, Icon, Input, Message } from 'zarm'
+import { Button, Cell, Input, Message, Icon } from 'zarm'
 import './partOne.less'
 
-interface IPartFour {}
+interface IPartOne {}
 
-const PartFive: FC<IPartFour> = (props) => {
-    const [money, setMoney] = useState('')
+const PartOne: FC<IPartOne> = (props) => {
+    const [ETFMoney, setETFMoney] = useState('')
     const [yearPercent, setYearPercent] = useState('')
-    const [year, setYear] = useState('')
-    const [result, setResult] = useState('')
+    const [month, setMonth] = useState('')
+    const [lowYear, setLowYear] = useState<any>('')
+    const [upYear, setUpYear] = useState<any>('')
 
     return (
         <div className="partOne">
             <div style={{ marginTop: '10px', marginBottom: '10px' }}>
                 <Message theme="danger" icon={<Icon type="warning-round" />}>
-                    表示根据到期目标金额测算初始需一次性投入金额
+                    表示定投最终收益测算
                 </Message>
             </div>
 
-            <Cell title="目标到期金额">
+            <Cell title="已定投月数">
                 <Input
                     clearable
                     type="text"
                     placeholder="请输入"
-                    value={money}
+                    value={month}
                     onChange={(value) => {
-                        setMoney(value)
+                        setMonth(value)
                     }}
                     onBlur={(value) => console.log(`onBlur: ${value}`)}
                 />
-                <span>万元</span>
+                <span>个月</span>
             </Cell>
-            <Cell title="投资年数">
+            <Cell title="ETF成本价">
                 <Input
                     clearable
                     type="text"
                     placeholder="请输入"
-                    value={year}
+                    value={ETFMoney}
                     onChange={(value) => {
-                        setYear(value)
+                        setETFMoney(value)
                         console.log(`onChange: ${value}`)
                     }}
                     onBlur={(value) => console.log(`onBlur: ${value}`)}
                 />
-                <span>年</span>
+                <span>元</span>
             </Cell>
-            <Cell title="年化收益率">
+            <Cell title="目标年收益率">
                 <Input
                     clearable
                     type="text"
@@ -64,26 +65,36 @@ const PartFive: FC<IPartFour> = (props) => {
                     theme="primary"
                     style={{ marginRight: '20px' }}
                     onClick={() => {
-                        const result =
-                            Number(money) / Math.pow(1 + Number(yearPercent) / 100, Number(year))
-                        setResult(Math.round(Number(result) * 10000) / 10000 + '')
+                        const t = Number(yearPercent) * 0.01
+                        const n = Number(month)
+                        const A = Number(ETFMoney)
+
+                        const lowYearValue = A * (1 + t)
+                        setLowYear(lowYearValue.toFixed(2))
+                        const upYearValue = A * (1 + (t * n) / 12)
+                        setUpYear(upYearValue.toFixed(2))
                     }}>
                     计算
                 </Button>
                 <Button
                     theme="danger"
                     onClick={() => {
-                        setResult('')
-                        setMoney('')
-                        setYear('')
+                        setUpYear('')
+                        setLowYear('')
+                        setETFMoney('')
+                        setMonth('')
                         setYearPercent('')
                     }}>
                     清空
                 </Button>
             </div>
 
-            <Cell title="初始投入金额">
-                <Input readOnly type="text" value={result} />
+            <Cell title="定投1年以下卖出价">
+                <Input readOnly type="text" value={lowYear} />
+                <span>万元</span>
+            </Cell>
+            <Cell title="定投1年以上卖出价">
+                <Input readOnly type="text" value={upYear} />
                 <span>万元</span>
             </Cell>
             <Cell />
@@ -91,4 +102,4 @@ const PartFive: FC<IPartFour> = (props) => {
     )
 }
 
-export default PartFive
+export default PartOne

@@ -8,7 +8,7 @@ import PartTwo from '@/component/partTwo'
 import PartThree from '@/component/partThree'
 import PartFour from '@/component/partFour'
 import './index.less'
-import PartFive from '@/component/partFive'
+import PartOneCopy from '@/component/partOneCopy'
 interface IIndex {}
 
 const Index: FC<IIndex> = (props) => {
@@ -19,7 +19,7 @@ const Index: FC<IIndex> = (props) => {
 
             <Tabs value={value} onChange={setValue} swipeable>
                 <Panel title="定投收益">
-                    <PartOne />
+                    <PartOneCopy />
                 </Panel>
                 <Panel title="定投倒推">
                     <PartTwo />
@@ -29,9 +29,6 @@ const Index: FC<IIndex> = (props) => {
                 </Panel>
                 <Panel title="初始投入">
                     <PartFour />
-                </Panel>
-                <Panel title="新标签页">
-                    <PartFive />
                 </Panel>
             </Tabs>
 
