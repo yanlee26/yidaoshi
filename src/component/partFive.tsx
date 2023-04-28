@@ -2,16 +2,16 @@ import React, { FC, useState } from 'react'
 import { Button, Cell, Input, Message, Icon } from 'zarm'
 import './partOne.less'
 
-interface IPartOne {}
+interface IpartFive {}
 
-const PartOne: FC<IPartOne> = (props) => {
+const partFive: FC<IpartFive> = (props) => {
     const [monthMoney, setMonthMoney] = useState('')
     const [yearPercent, setYearPercent] = useState('')
     const [year, setYear] = useState('')
     const [result, setResult] = useState<any>('')
 
     return (
-        <div className="partOne">
+        <div className="partFive">
             <div style={{ marginTop: '10px', marginBottom: '10px' }}>
                 <Message theme="danger" icon={<Icon type="warning-round" />}>
                     表示定投最终收益测算
@@ -84,7 +84,7 @@ const PartOne: FC<IPartOne> = (props) => {
                 </Button>
             </div>
 
-            <Cell title="到期收益金额">
+            <Cell title="到期收益总金额">
                 <Input readOnly type="text" value={result} />
                 <span>万元</span>
             </Cell>
@@ -93,4 +93,4 @@ const PartOne: FC<IPartOne> = (props) => {
     )
 }
 
-export default PartOne
+export default partFive

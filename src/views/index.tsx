@@ -3,7 +3,7 @@ import { Tabs } from 'zarm'
 const { Panel } = Tabs
 import logo from '@/assets/logo.jpg'
 import erweima from '@/assets/erweima.jpeg'
-import PartOne from '@/component/partOne'
+import PartFive from '@/component/partFive'
 import PartTwo from '@/component/partTwo'
 import PartThree from '@/component/partThree'
 import PartFour from '@/component/partFour'
@@ -17,7 +17,7 @@ const Index: FC<IIndex> = (props) => {
         <div className="app1">
             <img src={logo} alt="" className="logo" />
 
-            <Tabs value={value} onChange={setValue} swipeable>
+            <Tabs scrollable value={value} onChange={setValue} swipeable>
                 <Panel title="定投卖出价">
                     <PartOneCopy />
                 </Panel>
@@ -29,6 +29,9 @@ const Index: FC<IIndex> = (props) => {
                 </Panel>
                 <Panel title="初始投入">
                     <PartFour />
+                </Panel>
+                <Panel title="定投最终收益测算">
+                    <PartFive />
                 </Panel>
             </Tabs>
 
