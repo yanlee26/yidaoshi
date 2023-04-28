@@ -15,7 +15,7 @@ const PartOne: FC<IPartOne> = (props) => {
         <div className="partOne">
             <div style={{ marginTop: '10px', marginBottom: '10px' }}>
                 <Message theme="danger" icon={<Icon type="warning-round" />}>
-                    表示定投最终收益测算
+                    表示定投最终卖出价的测算
                 </Message>
             </div>
 
